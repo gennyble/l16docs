@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="">
+    <title> | Update the Camera&#x27;s Firmware</title>
+    
+    <link rel="stylesheet" href="https://gennyble.github.io/l16docs/style.css?h=ba4e332b4e56aa7e4f4a">
+    
+    
+    
+    
+</head>
+
+<body>
+    
+<header class="space">
+    <a href="https:&#x2F;&#x2F;gennyble.github.io&#x2F;l16docs&#x2F;">&LeftArrow; Home</a>
+</header>
+
+    
+<main>
+    <h1>Update the Camera&#x27;s Firmware</h1>
+    
+    <p class="secondary small">
+        24 January, 2025
+
+        
+        
+        
+        
+        
+
+        
+        
+        - Tags:
+        
+        
+        <a href="https:&#x2F;&#x2F;gennyble.github.io&#x2F;l16docs&#x2F;tags&#x2F;update&#x2F;">update</a>,
+        
+        
+        <a href="https:&#x2F;&#x2F;gennyble.github.io&#x2F;l16docs&#x2F;tags&#x2F;camera&#x2F;">camera</a>
+        
+        
+    </p>
+    
+    <div class="space"></div>
+    <p>A user on GitHub, helloavo, has archived quite a bit of software and information
+to do with the L16. They have also managed to get ahold of the latest firmware!
+You can download it from their Light-L16-Archive repository under the
+<a href="https://github.com/helloavo/Light-L16-Archive/releases/tag/1.3.5.1">releases section</a>.
+Download the file <code>LFC-1351-0-00WW-A01-update.zip</code> and follow the below steps.</p>
+<p><strong>NOTE:</strong> if you rooted your L16 prior to updating this, be sure to remove it
+as going through these steps may soft brick your device. You will have to
+recover from backups if this occurs.</p>
+<p>Try to have at least half of a charge before upgrading the firmware.</p>
+<ol>
+<li>Connect your camera to your computer</li>
+<li>Unlock your camera, swipe the notification pane down, and select "File Transfers (MTP)".</li>
+<li>Copy the firmware, still in the zip file, to the root directory of the L16; to the L16's internal storage.</li>
+<li>Unplug the camera and power it off.</li>
+<li>Turn the camera on. You should have a notification to apply the update.</li>
+<li>Agree to the terms and choose install. <strong>The L16 will restart multiple times during this process</strong>.</li>
+<li>After this is finished, the camera should be updated to 1.3.5.1. You should check this in the settings.</li>
+</ol>
+
+</main>
+
+    <div class="dark-mode-buttons">
+        <button class="dark-mode-button" id="dark-mode-on"><img src="https://gennyble.github.io/l16docs/dark_mode.svg" width="24"
+                height="24" alt="Dark mode" aria-label="dark mode toggle" title="Dark mode"></button>
+        <button class="dark-mode-button" id="dark-mode-off"><img src="https://gennyble.github.io/l16docs/light_mode.svg" width="24"
+                height="24" alt="Light mode" aria-label="light mode toggle" title="Light mode"></button>
+    </div>
+    <script>
+        const cls = document.querySelector("html").classList;
+        const sessionTheme = sessionStorage.getItem("theme");
+
+        function setDark() {
+            cls.add("dark-mode");
+            cls.remove("light-mode");
+            sessionStorage.setItem("theme", "dark");
+        }
+        function setLight() {
+            cls.add("light-mode");
+            cls.remove("dark-mode");
+            sessionStorage.setItem("theme", "light");
+        }
+
+        if (sessionTheme === "dark") {
+            setDark();
+        } else if (sessionTheme === "light") {
+            setLight();
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            setDark();
+        }
+
+        document.getElementById("dark-mode-on").addEventListener("click", function (e) {
+            setDark();
+        });
+        document.getElementById("dark-mode-off").addEventListener("click", function (e) {
+            setLight();
+        });
+    </script>
+    <noscript>
+        <style>
+            .dark-mode-buttons {
+                display: none;
+            }
+        </style>
+    </noscript>
+</body>
+
+</html>
