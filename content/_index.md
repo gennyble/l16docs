@@ -15,4 +15,4 @@ from it:
 <https://discord.gg/M6UWK7kFRa>
 
 Pages you might want to visit:
-- [Update the camera's firmware](/blog/update)
+- [Update the camera's firmware](@/blog/update.md)

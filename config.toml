@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://gennyble.github.io/l16docs"
+base_url = "https://gennyble.github.io/l16docs/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -18,7 +18,7 @@ highlight_code = true
 
 [extra]
 links = [
-	{ title = "Home", href = "/" },
-	{ title = "Pages", href = "/pages" },
-	{ title = "OS Update", href = "/blog/update" },
+	{ title = "Home", href = "@/_index.md" },
+	{ title = "Pages", href = "@/pages.md" },
+	{ title = "OS Update", href = "@/blog/update.md" },
 ]
